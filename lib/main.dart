@@ -1,26 +1,35 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 
-void main(List<String> args) {
-  runApp(const MyApp()); //Application
+void main() {
+  runApp(const MyApp()); // Application
 }
 
-//Root App:
+// Root App:
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomeActivity());
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.green),
+      darkTheme: ThemeData(primarySwatch: Colors.blueGrey),
+      debugShowCheckedModeBanner: false,
+      home: const HomeActivity(),
+    );
   }
 }
 
-//Home Activity:
+// Home Activity:
 class HomeActivity extends StatelessWidget {
-  const HomeActivity({super.key});
+  const HomeActivity({Key? key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text("My App")), body: const Text("Hello"));
+      appBar: AppBar(title: const Text("My App Bar")),
+      body: const Text("Hello"),
+    );
   }
 }
