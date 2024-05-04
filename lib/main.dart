@@ -28,8 +28,15 @@ class HomeActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("My App Bar")),
+      appBar: AppBar(
+        title: const Text("Inventory App"),
+        titleSpacing: 10,
+        toolbarHeight: 50,
+        backgroundColor: Colors.blue,
+        elevation: 10,
+      ),
       body: const Text("Hello"),
+      backgroundColor: Colors.blueGrey[50],
     );
   }
 }
