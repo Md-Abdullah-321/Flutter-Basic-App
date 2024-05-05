@@ -25,6 +25,11 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({Key? key});
 
+  MyStackBar(message, context) {
+    return ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(message)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,13 +40,25 @@ class HomeActivity extends StatelessWidget {
         backgroundColor: Colors.blue,
         elevation: 10,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.comment)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
+          IconButton(
+              onPressed: () {
+                MyStackBar("Comments", context);
+              },
+              icon: const Icon(Icons.comment)),
+          IconButton(
+              onPressed: () {
+                MyStackBar("Search", context);
+              },
+              icon: const Icon(Icons.search)),
+          IconButton(
+              onPressed: () {
+                MyStackBar("Settings", context);
+              },
+              icon: const Icon(Icons.settings)),
         ],
       ),
       body: const Text("Hello"),
-      backgroundColor: Colors.blueGrey[50],
+      backgroundColor: Colors.yellow[100],
     );
   }
 }
