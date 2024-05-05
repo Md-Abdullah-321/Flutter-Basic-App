@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({Key? key});
 
+  // ignore: non_constant_identifier_names
   MyStackBar(message, context) {
     return ScaffoldMessenger.of(context)
         .showSnackBar(SnackBar(content: Text(message)));
@@ -57,6 +58,13 @@ class HomeActivity extends StatelessWidget {
               icon: const Icon(Icons.settings)),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+          elevation: 10,
+          backgroundColor: Colors.blueAccent,
+          child: const Icon(Icons.add),
+          onPressed: () {
+            MyStackBar("Floating Action Button", context);
+          }),
       body: const Text("Hello"),
       backgroundColor: Colors.yellow[100],
     );
