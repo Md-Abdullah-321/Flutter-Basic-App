@@ -65,6 +65,25 @@ class HomeActivity extends StatelessWidget {
           onPressed: () {
             MyStackBar("Floating Action Button", context);
           }),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: "Contact"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")
+        ],
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              MyStackBar("Home Bottom Menu", context);
+              break;
+            case 1:
+              MyStackBar("Contact Bottom Menu", context);
+            default:
+              MyStackBar("Profile Bottom Menu", context);
+          }
+        },
+      ),
       body: const Text("Hello"),
       backgroundColor: Colors.yellow[100],
     );
