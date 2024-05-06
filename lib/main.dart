@@ -84,6 +84,18 @@ class HomeActivity extends StatelessWidget {
           }
         },
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: const [
+            DrawerHeader(child: Text("Md Abdullah")),
+            ListTile(title: Text("Home")),
+            ListTile(title: Text("About")),
+            ListTile(title: Text("Services")),
+            ListTile(title: Text("Portfolio")),
+            ListTile(title: Text("Contact")),
+          ],
+        ),
+      ),
       body: const Text("Hello"),
       backgroundColor: Colors.yellow[100],
     );

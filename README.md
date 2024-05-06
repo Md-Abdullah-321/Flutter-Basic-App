@@ -22,7 +22,7 @@ This Flutter app serves as a starting point for beginners to understand the fund
 
 1. **Clone the repository, navigate to the project directory, install dependencies, and run the app:**
    ```bash
-   git clone https://github.com/your-username/Flutter-Basic-App.git && cd Flutter-Basic-App && flutter pub get && flutter run
+   git clone https://github.com/Md-Abdullah-321/Flutter-Basic-App.git && cd Flutter-Basic-App && flutter pub get && flutter run
    ```
 
 ## Contributing
