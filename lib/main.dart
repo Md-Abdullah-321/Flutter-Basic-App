@@ -139,7 +139,15 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
-      body: const Text("Hello"),
+      body: Center(
+        child: Text(
+          "Hello Flutter".toUpperCase(),
+          style: TextStyle(
+            fontSize: 42,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
       backgroundColor: Colors.yellow[100],
     );
   }
