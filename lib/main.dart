@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 
@@ -87,7 +87,20 @@ class HomeActivity extends StatelessWidget {
       drawer: Drawer(
         child: ListView(
           children: [
-            const DrawerHeader(child: Text("Md Abdullah")),
+            DrawerHeader(
+                padding: const EdgeInsets.all(0),
+                child: UserAccountsDrawerHeader(
+                  // decoration: const BoxDecoration(color: Colors.black),
+                  accountName: const Text("Md Abdullah"),
+                  accountEmail: const Text("abdullah.dev.it@gmail.com"),
+                  // ignore: unnecessary_new
+                  currentAccountPicture: new CircleAvatar(
+                    radius: 50.0,
+                    backgroundImage: NetworkImage(
+                        "https://scontent.fdac142-1.fna.fbcdn.net/v/t39.30808-6/424938165_365447596338067_2885686924490441612_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=xQxoZfBUfOAQ7kNvgFHLeRL&_nc_ht=scontent.fdac142-1.fna&oh=00_AfCDUTty7hQnnHi1_yGlVuMhl9UpSYioI6j8d_fawOXPDg&oe=663E0008"), // for Network image
+                  ),
+                  margin: EdgeInsets.all(0),
+                )),
             ListTile(
               leading: const Icon(Icons.home),
               title: const Text("Home"),
