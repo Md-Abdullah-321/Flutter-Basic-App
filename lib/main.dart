@@ -37,6 +37,8 @@ class HomeActivity extends StatelessWidget {
         builder: (BuildContext context) {
           return Expanded(
               child: AlertDialog(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(5.0))),
             title: Text("Are You Sure!"),
             content: Text("Do you want to delete this item?"),
             actions: [
@@ -58,6 +60,10 @@ class HomeActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+        minimumSize: Size(double.infinity, 60),
+        backgroundColor: Colors.amberAccent,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)));
     return Scaffold(
       appBar: AppBar(
         title: const Text("Inventory App"),
@@ -167,7 +173,7 @@ class HomeActivity extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            height: 250,
+            height: 150,
             width: double.infinity,
             alignment: Alignment.center,
             child: Text("Hello Flutter".toUpperCase(),
@@ -178,14 +184,14 @@ class HomeActivity extends StatelessWidget {
           ),
           // Add another container here
           Container(
-            height: 250, // Adjust height as needed
+            height: 150, // Adjust height as needed
             width: double.infinity,
             decoration: BoxDecoration(color: Colors.blueAccent),
             child: Image.network(
                 "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-flutter-logo-icon-png-image_6108134.png"),
           ),
           Container(
-              height: 250,
+              height: 100,
               width: double.infinity,
               decoration: BoxDecoration(color: Colors.brown),
               child: TextButton(
@@ -198,7 +204,47 @@ class HomeActivity extends StatelessWidget {
                         fontSize: 24,
                         fontWeight: FontWeight.w500,
                         color: Colors.white),
-                  )))
+                  ))),
+
+          Container(
+              height: 400,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: "First Name"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(), labelText: "Last Name"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: TextField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: "Email Address"),
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.all(20),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          MyAlernDialogue(context);
+                        },
+                        child: Text("Submit"),
+                        style: buttonStyle,
+                      )),
+                ],
+              ))
         ],
       ),
       backgroundColor: Colors.yellow[100],
