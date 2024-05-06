@@ -86,13 +86,43 @@ class HomeActivity extends StatelessWidget {
       ),
       drawer: Drawer(
         child: ListView(
-          children: const [
-            DrawerHeader(child: Text("Md Abdullah")),
-            ListTile(title: Text("Home")),
-            ListTile(title: Text("About")),
-            ListTile(title: Text("Services")),
-            ListTile(title: Text("Portfolio")),
-            ListTile(title: Text("Contact")),
+          children: [
+            const DrawerHeader(child: Text("Md Abdullah")),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text("Home"),
+              onTap: () {
+                MyStackBar("Home", context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: const Text("About"),
+              onTap: () {
+                MyStackBar("About", context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.design_services),
+              title: const Text("Services"),
+              onTap: () {
+                MyStackBar("Home", context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.offline_bolt),
+              title: const Text("Portfolio"),
+              onTap: () {
+                MyStackBar("Home", context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.abc_outlined),
+              title: const Text("Contact"),
+              onTap: () {
+                MyStackBar("Home", context);
+              },
+            ),
           ],
         ),
       ),
