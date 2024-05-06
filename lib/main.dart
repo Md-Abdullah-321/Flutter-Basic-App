@@ -31,6 +31,31 @@ class HomeActivity extends StatelessWidget {
         .showSnackBar(SnackBar(content: Text(message)));
   }
 
+  MyAlernDialogue(context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Expanded(
+              child: AlertDialog(
+            title: Text("Are You Sure!"),
+            content: Text("Do you want to delete this item?"),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    MyStackBar("Delete Success", context);
+                  },
+                  child: Text("Yes")),
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("No")),
+            ],
+          ));
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -139,14 +164,42 @@ class HomeActivity extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: Text(
-          "Hello Flutter".toUpperCase(),
-          style: TextStyle(
-            fontSize: 42,
-            fontWeight: FontWeight.bold,
+      body: Column(
+        children: [
+          Container(
+            height: 250,
+            width: double.infinity,
+            alignment: Alignment.center,
+            child: Text("Hello Flutter".toUpperCase(),
+                style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold)),
+            decoration: BoxDecoration(
+              color: Colors.amber,
+            ),
           ),
-        ),
+          // Add another container here
+          Container(
+            height: 250, // Adjust height as needed
+            width: double.infinity,
+            decoration: BoxDecoration(color: Colors.blueAccent),
+            child: Image.network(
+                "https://png.pngtree.com/png-vector/20220812/ourmid/pngtree-flutter-logo-icon-png-image_6108134.png"),
+          ),
+          Container(
+              height: 250,
+              width: double.infinity,
+              decoration: BoxDecoration(color: Colors.brown),
+              child: TextButton(
+                  onPressed: () {
+                    MyAlernDialogue(context);
+                  },
+                  child: Text(
+                    "GET NOW",
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white),
+                  )))
+        ],
       ),
       backgroundColor: Colors.yellow[100],
     );
