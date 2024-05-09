@@ -19,6 +19,7 @@ This Flutter app serves as a starting point for beginners to understand the fund
 - Dart
 
 ## Getting Started
+![image](https://github.com/Md-Abdullah-321/Flutter-Basic-App/assets/81377690/ea2b23b9-37f3-4d5d-9448-5eba2d1b0377)
 
 1. **Clone the repository, navigate to the project directory, install dependencies, and run the app:**
    ```bash
